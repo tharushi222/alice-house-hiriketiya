@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Report – Alice House Hiriketiya Accommodation Booking Management System</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 14mm 16mm;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2937;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+        .page {
+            width: 100%;
+            min-height: 260mm;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            padding: 10px 0;
+        }
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1.5px solid #1e3a2f;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            font-size: 8.5pt;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .page-footer {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 6px;
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 8.5pt;
+            color: #9ca3af;
+        }
+        h1, h2, h3, h4 {
+            color: #1e3a2f;
+            font-weight: 700;
+        }
+        h1 { font-size: 18pt; margin-bottom: 8px; line-height: 1.2; }
+        h2 { font-size: 13pt; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 4px; color: #1e3a2f; }
+        h3 { font-size: 10.5pt; margin-bottom: 4px; color: #0f766e; }
+        p { margin-bottom: 8px; font-size: 9.5pt; color: #374151; text-align: justify; }
+        ul, ol { margin-left: 18px; margin-bottom: 8px; font-size: 9.5pt; color: #374151; }
+        li { margin-bottom: 3px; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            font-size: 8.5pt;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 5px 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f4f6;
+            color: #111827;
+            font-weight: 700;
+        }
+        
+        .box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid #1e3a2f;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 9pt;
+        }
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 7.5pt;
+            font-weight: 700;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .cover-box {
+            background: linear-gradient(135deg, #1e3a2f 0%, #13251e 100%);
+            color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .cover-box h1 { color: #fff; font-size: 20pt; margin-bottom: 6px; }
+        .cover-box p { color: #fef08a; font-size: 10.5pt; text-align: center; margin-bottom: 0; }
+        
+        /* Print styles */
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Print Control Button (Screen only) -->
+<div class="no-print" style="position: sticky; top: 0; background: #1e3a2f; color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+    <div>
+        <strong>Alice House Hiriketiya – Academic Project Report (5 Pages)</strong>
+        <span style="font-size: 12px; opacity: 0.85; margin-left: 10px;">Ready for PDF Generation</span>
+    </div>
+    <button onclick="window.print()" style="background: #d4af37; color: #1e3a2f; border: none; padding: 8px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;">
+        🖨️ Print / Save as PDF (Ctrl + P)
+    </button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+    <div>
+        <div class="page-header">
+            <span>Project Report</span>
+            <span>Alice House Hiriketiya – Booking Management System</span>
+            <span>Page 1 of 5</span>
+        </div>
+
+        <div class="cover-box">
+            <h1>ALICE HOUSE HIRIKETIYA</h1>
+            <p>Dynamic Accommodation Booking Management System 🏝️</p>
+            <div style="font-size: 9pt; opacity: 0.9; margin-top: 10px;">
+                <strong>Based on Real-World Case Study:</strong> Booking.com Listing (Rating: 9.4/10 Exceptional)<br>
+                <strong>Location:</strong> Wedagedara, Dodampahala, Dikwella, Matara District, Southern Province, Sri Lanka
+            </div>
+        </div>
+
+        <h2>1. Executive Summary & Project Background</h2>
+        <p>
+            The tourism and hospitality sector in Sri Lanka's southern coastal belt—particularly around the internationally celebrated horseshoe surfing haven of Hiriketiya Beach—has experienced rapid growth in boutique homestays and self-catering villas. <strong>Alice House Hiriketiya</strong> is an acclaimed, family-run guesthouse located in Wedagedara, Dodampahala, Dikwella, situated just a 10-to-12 minute stroll from Hiriketiya Beach.
+        </p>
+        <p>
+            While Alice House maintains a premier <strong>9.4 / 10 ("Exceptional") rating on Booking.com</strong>, relying exclusively on third-party Online Travel Agencies (OTAs) imposes steep commission fees (15%–20%), provides limited control over customer communication, and prevents custom pricing or direct guest relationship management. This project delivers a standalone, dynamic, web-based <strong>Accommodation Booking Management System</strong> tailored specifically to Alice House Hiriketiya.
+        </p>
+
+        <h2>2. Problem Statement & Project Objectives</h2>
+        <div class="grid-2">
+            <div class="box">
+                <h3 style="color:#b91c1c;">Identified Challenges</h3>
+                <ul>
+                    <li>Heavy reliance on OTA intermediaries cutting profit margins.</li>
+                    <li>Risk of double-booking across manual paper/message logs.</li>
+                    <li>Lack of dynamic, live cost calculation for guests in USD & LKR.</li>
+                    <li>Inefficient manual room inventory and reservation tracking.</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3 style="color:#15803d;">Project Objectives</h3>
+                <ul>
+                    <li>Develop a dynamic web booking engine with conflict detection.</li>
+                    <li>Provide guest authentication and self-service reservation portal.</li>
+                    <li>Empower guesthouse hosts with a comprehensive Admin Dashboard.</li>
+                    <li>Ensure seamless local deployment on XAMPP (Apache, PHP, MySQL).</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>3. Scope of the System</h2>
+        <p>
+            The project encompasses both a customer-facing public web portal and a privileged administrator management console:
+        </p>
+        <ul>
+            <li><strong>Public Guest Portal:</strong> Hotel overview, Booking.com room catalog with photos & amenities, date availability search, dynamic cost calculator, reservation checkout, guest account management, and verified reviews.</li>
+            <li><strong>Host / Admin Console:</strong> Key performance indicators (revenue, bookings, room statuses), complete Room CRUD with file uploads, reservation workflow moderation (Pending, Confirmed, Completed, Cancelled), and review moderation.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>Alice House Hiriketiya Booking System</span>
+        <span>Confidential & Academic Submission</span>
+        <span>Page 1</span>
+    </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+    <div>
+        <div class="page-header">
+            <span>Project Report</span>
+            <span>System Architecture & Technologies</span>
+            <span>Page 2 of 5</span>
+        </div>
+
+        <h2>4. System Architecture & Technology Stack</h2>
+        <p>
+            The system employs a classic <strong>3-Tier MVC-oriented Web Architecture</strong> designed for high performance, maintainability, and compatibility with standard XAMPP local server environments.
+        </p>
+
+        <div class="box" style="text-align: center; font-family: monospace; font-size: 8.5pt; line-height: 1.4;">
+            <strong>[Presentation Tier]</strong> HTML5 • Responsive CSS3 (Grid/Flexbox) • Vanilla JS ES6 (Async/DOM Engine)<br>
+            ⬇ ⬆ (HTTP/HTTPS Requests, Form Submissions & AJAX Sessions)<br>
+            <strong>[Application Tier]</strong> PHP 8.2 • PDO Prepared Statements • Session Auth • Business Validation Logic<br>
+            ⬇ ⬆ (SQL Queries & Relational Relays)<br>
+            <strong>[Data Tier]</strong> MySQL / MariaDB (InnoDB Engine) • Normalized Tables • Relational Foreign Keys
+        </div>
+
+        <h2>5. Technology Evaluation & Selection Justification</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Layer</th>
+                    <th>Technology</th>
+                    <th>Technical Role & Justification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Frontend Markup</strong></td>
+                    <td>HTML5 & Semantic Tags</td>
+                    <td>Delivers clean structure, accessible form fields (date, tel, email), and SEO-friendly metadata for guesthouse visibility.</td>
+                </tr>
+                <tr>
+                    <td><strong>Frontend Style</strong></td>
+                    <td>CSS3 Custom Variables & Flex/Grid</td>
+                    <td>Custom tropical boutique design reflecting southern Sri Lankan aesthetic without bulky framework overhead. 100% responsive.</td>
+                </tr>
+                <tr>
+                    <td><strong>Frontend Logic</strong></td>
+                    <td>Vanilla JavaScript (ES6)</td>
+                    <td>Client-side date validation (checkout > checkin >= today), live dynamic price calculation (nights × rate = subtotal), and thumbnail switcher.</td>
+                </tr>
+                <tr>
+                    <td><strong>Backend Logic</strong></td>
+                    <td>PHP 8.2 (PDO)</td>
+                    <td>Server-side request processing, session management, password hashing via Bcrypt, and SQL injection prevention via parameterized queries.</td>
+                </tr>
+                <tr>
+                    <td><strong>Database</strong></td>
+                    <td>MySQL (InnoDB)</td>
+                    <td>ACID-compliant relational database management with foreign key constraints, cascading updates, and indexing for date range checks.</td>
+                </tr>
+                <tr>
+                    <td><strong>Server Platform</strong></td>
+                    <td>XAMPP (Apache 2.4, PHP 8.2)</td>
+                    <td>Standard, cross-platform local development and deployment environment ensuring effortless execution on any Windows workstation.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>6. Core System Modules</h2>
+        <div class="grid-2">
+            <div class="box">
+                <h3>A. Authentication & Security Module</h3>
+                <p>Enforces role-based access control (RBAC) distinguishing standard <em>Guests</em> from <em>Administrators</em>. Employs <code>password_hash()</code> with <code>PASSWORD_BCRYPT</code> and session protection.</p>
+            </div>
+            <div class="box">
+                <h3>B. Room Availability & Search Engine</h3>
+                <p>Executes an overlapping date verification query: checks whether <code>check_in < requested_checkout AND check_out > requested_checkin</code> for non-cancelled reservations.</p>
+            </div>
+            <div class="box">
+                <h3>C. Dynamic Cost Calculation Engine</h3>
+                <p>Computes elapsed nights, applies the room's nightly rate, adds cleaning/service breakdown, and converts USD to Sri Lankan Rupees (LKR) at live reference ratios.</p>
+            </div>
+            <div class="box">
+                <h3>D. Administrative Operations Module</h3>
+                <p>Provides full control over property inventory: adding rooms with multipart photo uploads, adjusting rates, confirming reservations, and managing user records.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>Alice House Hiriketiya Booking System</span>
+        <span>Confidential & Academic Submission</span>
+        <span>Page 2</span>
+    </div>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="page">
+    <div>
+        <div class="page-header">
+            <span>Project Report</span>
+            <span>Database Architecture & Entity Design</span>
+            <span>Page 3 of 5</span>
+        </div>
+
+        <h2>7. Database Design & Entity-Relationship Schema</h2>
+        <p>
+            The relational database <code>alice_house_db</code> is normalized up to Third Normal Form (3NF) to eliminate data redundancy, uphold relational integrity, and guarantee atomic transaction processing.
+        </p>
+
+        <div class="box" style="font-family: monospace; font-size: 8pt; line-height: 1.4; text-align: center;">
+            [USERS] 1 ----- * [BOOKINGS] * ----- 1 [ROOMS]<br>
+               |                    |                    |<br>
+               | 1                  | 1                  | 1<br>
+               | *                  | 1                  | *<br>
+            [REVIEWS]            [PAYMENTS]          [REVIEWS]
+        </div>
+
+        <h2>8. Data Dictionary & Table Specifications</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Table</th>
+                    <th>Key Attributes</th>
+                    <th>Data Types & Constraints</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>users</strong></td>
+                    <td>id (PK)<br>email (UK)<br>password<br>role</td>
+                    <td>INT AUTO_INCREMENT<br>VARCHAR(100) NOT NULL<br>VARCHAR(255) (Bcrypt hash)<br>ENUM('guest', 'admin')</td>
+                    <td>Stores user authentication profiles, customer contact numbers, and system privilege roles.</td>
+                </tr>
+                <tr>
+                    <td><strong>rooms</strong></td>
+                    <td>id (PK)<br>room_name<br>room_type<br>price_per_night<br>capacity<br>status</td>
+                    <td>INT AUTO_INCREMENT<br>VARCHAR(150) NOT NULL<br>VARCHAR(60)<br>DECIMAL(10,2)<br>INT NOT NULL DEFAULT 2<br>ENUM('available','maintenance','unavailable')</td>
+                    <td>Maintains accommodation inventory, capacity constraints, bed configurations, and photo paths based on Booking.com.</td>
+                </tr>
+                <tr>
+                    <td><strong>bookings</strong></td>
+                    <td>id (PK)<br>booking_reference (UK)<br>user_id (FK)<br>room_id (FK)<br>check_in, check_out<br>status</td>
+                    <td>INT AUTO_INCREMENT<br>VARCHAR(30) UNIQUE<br>INT (Ref users.id)<br>INT (Ref rooms.id)<br>DATE NOT NULL<br>ENUM('pending','confirmed','cancelled','completed')</td>
+                    <td>Core transaction records linking guests to reserved rooms with stay duration, total calculation, and status.</td>
+                </tr>
+                <tr>
+                    <td><strong>payments</strong></td>
+                    <td>id (PK)<br>booking_id (FK)<br>amount<br>payment_method<br>payment_status</td>
+                    <td>INT AUTO_INCREMENT<br>INT (Ref bookings.id)<br>DECIMAL(10,2)<br>VARCHAR(60)<br>ENUM('pending','completed','failed')</td>
+                    <td>Tracks financial transactions, settlement statuses, and chosen payment modes (Cash on Arrival / Card).</td>
+                </tr>
+                <tr>
+                    <td><strong>reviews</strong></td>
+                    <td>id (PK)<br>room_id (FK)<br>user_id (FK)<br>rating, comment</td>
+                    <td>INT AUTO_INCREMENT<br>INT (Ref rooms.id)<br>INT (Ref users.id)<br>INT (1-5), TEXT</td>
+                    <td>Customer satisfaction ratings and feedback displayed dynamically on room pages.</td>
+                </tr>
+                <tr>
+                    <td><strong>inquiries</strong></td>
+                    <td>id (PK)<br>name, email, phone<br>subject, message</td>
+                    <td>INT AUTO_INCREMENT<br>VARCHAR(100), VARCHAR(30)<br>VARCHAR(150), TEXT</td>
+                    <td>Direct customer inquiries regarding scooter rentals, airport transfers, and long stays.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>9. Relational Integrity & Cascading Rules</h2>
+        <ul>
+            <li><strong>Foreign Key Enforcement:</strong> <code>fk_bookings_user</code> and <code>fk_bookings_room</code> enforce referential integrity with <code>ON DELETE CASCADE</code>, preventing orphaned reservation records.</li>
+            <li><strong>Unique Constraints:</strong> <code>users.email</code> is unique, preventing duplicate account creations; <code>bookings.booking_reference</code> enforces unique human-readable reference tracking codes.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>Alice House Hiriketiya Booking System</span>
+        <span>Confidential & Academic Submission</span>
+        <span>Page 3</span>
+    </div>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="page">
+    <div>
+        <div class="page-header">
+            <span>Project Report</span>
+            <span>Implementation & User Interface Workflows</span>
+            <span>Page 4 of 5</span>
+        </div>
+
+        <h2>10. User Journey & Functional Workflows</h2>
+        <p>
+            The application provides intuitive, frictionless navigation structured around modern hospitality e-commerce standards:
+        </p>
+
+        <div class="box">
+            <h3>Workflow A: Room Discovery & Availability Search</h3>
+            <p>1. Guest accesses the Home Page or Rooms Catalog and inputs requested Check-in date, Check-out date, and Guest count.</p>
+            <p>2. The search engine queries the database, executing the availability subquery. Rooms already occupied are clearly tagged with <span class="badge" style="background:#fee2e2; color:#991b1b;">Booked on Dates</span>, while open rooms display <span class="badge" style="background:#d1fae5; color:#065f46;">Available</span> with dynamic duration pricing.</p>
+        </div>
+
+        <div class="box">
+            <h3>Workflow B: Reservation & Live Dynamic Costing</h3>
+            <p>1. On the Room Details page, the guest views high-resolution photography, detailed amenities (AC, Hot water, WiFi), and house rules.</p>
+            <p>2. The interactive client widget recalculates total cost in real time as dates are changed. Upon clicking <em>"Book Now"</em>, the user is authenticated, presents special requests (e.g. scooter rental), and submits the booking.</p>
+            <p>3. The system executes an atomic transaction, allocates a unique reference (e.g. <code>AH-202611-1042</code>), records the initial payment schedule, and redirects to <em>My Bookings</em>.</p>
+        </div>
+
+        <div class="box">
+            <h3>Workflow C: Administrative Property Governance</h3>
+            <p>1. Host Sasith logs into the Admin Portal via role-based credentials (<code>admin@alicehouse.com</code>).</p>
+            <p>2. The Dashboard displays total revenue, occupancy ratios, and pending reservations. With one click, the host can confirm reservations, toggle room availability for renovations, or adjust seasonal room rates.</p>
+        </div>
+
+        <h2>11. Page Directory & Interface Inventory</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>URL / Page Script</th>
+                    <th>Access Level</th>
+                    <th>Key Components & User Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>index.php</code></td>
+                    <td>Public</td>
+                    <td>Hero banner, Booking.com 9.4 rating badge, Quick Search bar, Featured accommodations, Property gallery, Verified reviews, Google Maps.</td>
+                </tr>
+                <tr>
+                    <td><code>rooms.php</code></td>
+                    <td>Public</td>
+                    <td>Full room catalog, dynamic search filters by dates, guests, room type, and price; availability status tags.</td>
+                </tr>
+                <tr>
+                    <td><code>room_details.php</code></td>
+                    <td>Public</td>
+                    <td>Interactive image gallery switcher, full amenities checklist, house rules, guest reviews list, review submission form, live booking card.</td>
+                </tr>
+                <tr>
+                    <td><code>book.php</code></td>
+                    <td>Authenticated Guest</td>
+                    <td>Secure checkout, stay dates confirmation, guest contact preview, special arrival notes, payment method selection.</td>
+                </tr>
+                <tr>
+                    <td><code>my_bookings.php</code></td>
+                    <td>Authenticated Guest</td>
+                    <td>Customer dashboard showing booking cards, reference codes, dates, nights, payment status, and instant cancellation button.</td>
+                </tr>
+                <tr>
+                    <td><code>admin/index.php</code></td>
+                    <td>Administrator Only</td>
+                    <td>Analytical KPI metric cards (Revenue, Bookings, Active Rooms, Guests), recent bookings overview, contact messages.</td>
+                </tr>
+                <tr>
+                    <td><code>admin/rooms.php</code></td>
+                    <td>Administrator Only</td>
+                    <td>Room inventory table, photo preview, inline status toggler, and New Room addition form with image upload.</td>
+                </tr>
+                <tr>
+                    <td><code>admin/bookings.php</code></td>
+                    <td>Administrator Only</td>
+                    <td>Comprehensive booking management with status tabs (All, Pending, Confirmed, Completed, Cancelled) and search.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page-footer">
+        <span>Alice House Hiriketiya Booking System</span>
+        <span>Confidential & Academic Submission</span>
+        <span>Page 4</span>
+    </div>
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+<div class="page">
+    <div>
+        <div class="page-header">
+            <span>Project Report</span>
+            <span>Testing, Security & Project Conclusion</span>
+            <span>Page 5 of 5</span>
+        </div>
+
+        <h2>12. Verification & Testing Matrix</h2>
+        <p>The system underwent thorough unit, integration, and user acceptance testing (UAT):</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test ID</th>
+                    <th>Test Scenario</th>
+                    <th>Expected Result</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>TC-01</strong></td>
+                    <td>Guest registration with valid data</td>
+                    <td>User profile created, password hashed with Bcrypt, automatic login session initiated.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-02</strong></td>
+                    <td>Duplicate email registration</td>
+                    <td>System blocks duplicate submission and presents clear user-friendly error alert.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-03</strong></td>
+                    <td>Date constraint validation</td>
+                    <td>Checkout date automatically enforces <code>checkout > checkin</code> and <code>checkin >= today</code>.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-04</strong></td>
+                    <td>Double-booking prevention</td>
+                    <td>Room booked on overlapping dates is marked unavailable; booking submission is rejected.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-05</strong></td>
+                    <td>Live cost calculation</td>
+                    <td>JavaScript computes accurate nights and total ($ & LKR); verified by server on POST.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-06</strong></td>
+                    <td>Guest booking cancellation</td>
+                    <td>Guest clicks Cancel; booking status updates to 'cancelled' and frees dates for other guests.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TC-07</strong></td>
+                    <td>Admin authorization guard</td>
+                    <td>Non-admin accounts attempting to access <code>/admin/</code> are redirected with access denied alert.</td>
+                    <td><span class="badge" style="background:#d1fae5; color:#065f46;">PASSED</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>13. Security Measures Implemented</h2>
+        <ul>
+            <li><strong>SQL Injection Elimination:</strong> 100% of database interactions utilize PHP Data Objects (PDO) with parameterized prepared statements.</li>
+            <li><strong>Cross-Site Scripting (XSS) Sanitization:</strong> All user-supplied inputs pass through <code>htmlspecialchars(..., ENT_QUOTES, 'UTF-8')</code> prior to browser rendering.</li>
+            <li><strong>Session Fixation Prevention:</strong> Critical authentication transitions invoke <code>session_regenerate_id(true)</code> to safeguard active session tokens.</li>
+            <li><strong>Secure Password Storage:</strong> Passwords stored using state-of-the-art Bcrypt cryptographic hashing algorithms.</li>
+        </ul>
+
+        <h2>14. Conclusion & Future Enhancements</h2>
+        <p>
+            The <strong>Alice House Hiriketiya Accommodation Booking Management System</strong> delivers a production-ready, high-converting digital platform that enables the guesthouse to capture direct reservations, eliminate OTA commission burdens, and streamline administrative operations.
+        </p>
+        <p>
+            <strong>Recommended Future Expansions:</strong>
+            1. Integration with online payment gateways (Stripe / PayHere Sri Lanka).
+            2. Two-way iCal synchronization with Booking.com and Airbnb calendars.
+            3. Automated WhatsApp / SMS reservation reminders for arriving international guests.
+        </p>
+
+        <div class="box" style="margin-top: 15px; border-left-color: #d4af37;">
+            <strong>System Deployment Status:</strong> Ready for evaluation and live hosting.<br>
+            <strong>GitHub Repository Structure:</strong> Clean repository with complete source code, <code>db_structure.sql</code>, comprehensive <code>README.md</code>, and documentation.
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>Alice House Hiriketiya Booking System</span>
+        <span>Confidential & Academic Submission</span>
+        <span>Page 5</span>
+    </div>
+</div>
+
+</body>
+</html>
